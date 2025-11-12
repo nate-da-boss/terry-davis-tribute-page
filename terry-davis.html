@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terry A. Davis - TempleOS Tribute</title>
+    <style>
+        body {
+            background-color: #0000AA;
+            color: #FFFFFF;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 10px;
+        }
+        
+        #container {
+            width: 800px;
+            margin: 0 auto;
+            border: 2px solid #FFFFFF;
+            background-color: #5555FF;
+            padding: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+        
+        h2 {
+            font-size: 18px;
+            margin: 15px 0 5px 0;
+            text-decoration: underline;
+        }
+        
+        p {
+            margin: 8px 0;
+            line-height: 1.2;
+        }
+        
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .button {
+            background-color: #FFFF55;
+            color: #000000;
+            border: 2px outset #FFFFFF;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        .button:active {
+            border: 2px inset #FFFFFF;
+        }
+        
+        .verse-box {
+            border: 2px solid #FFFFFF;
+            background-color: #0000AA;
+            padding: 10px;
+            margin: 10px 0;
+            display: none;
+        }
+        
+        .verse-text {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .verse-ref {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        hr {
+            border: 1px solid #FFFFFF;
+            margin: 15px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Terry A. Davis - TempleOS Creator</h1>
+        
+        <p>Welcome to the tribute page for Terry A. Davis, programmer and creator of TempleOS.</p>
+        
+        <hr>
+        
+        <h2>Biography</h2>
+        
+        <p>Terry A. Davis (1969-2018) was an American programmer who created TempleOS, a biblical-themed operating system.</p>
+        
+        <p>He started development in 2003 after God told him to build a temple. Originally called "J Operating System", it was later renamed TempleOS.</p>
+        
+        <p>Davis wrote everything himself - the kernel, compiler, graphics libraries, and applications.</p>
+        
+        <hr>
+        
+        <h2>Contributions</h2>
+        
+        <ul>
+            <li>Created TempleOS - a complete operating system from scratch</li>
+            <li>Designed HolyC programming language (a variant of C)</li>
+            <li>Built a 16-color 640x480 VGA graphics system</li>
+            <li>Implemented a 3D graphics engine for games</li>
+            <li>Wrote a flight simulator and many other programs</li>
+        </ul>
+        
+        <hr>
+        
+        <center>
+            <button class="button" onclick="showVerse()">Show Bible Verse</button>
+            
+            <div id="verseBox" class="verse-box">
+                <div id="verseText" class="verse-text">For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.</div>
+                <div id="verseRef" class="verse-ref">John 3:16</div>
+            </div>
+        </center>
+        
+        <hr>
+        
+        <footer>
+            &copy; 2025 Terry A. Davis Tribute Page
+        </footer>
+    </div>
+
+    <script>
+        const verses = [
+            {text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.", ref: "John 3:16"},
+            {text: "I can do all this through him who gives me strength.", ref: "Philippians 4:13"},
+            {text: "Trust in the LORD with all your heart and lean not on your own understanding.", ref: "Proverbs 3:5"},
+            {text: "The LORD is my shepherd, I lack nothing.", ref: "Psalm 23:1"},
+            {text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the LORD your God will be with you wherever you go.", ref: "Joshua 1:9"},
+            {text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well.", ref: "Matthew 6:33"},
+            {text: "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.", ref: "Jeremiah 29:11"},
+            {text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.", ref: "Philippians 4:6"},
+            {text: "The fear of the LORD is the beginning of wisdom, and knowledge of the Holy One is understanding.", ref: "Proverbs 9:10"},
+            {text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", ref: "Romans 8:28"}
+        ];
+        
+        function showVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            const verse = verses[randomIndex];
+            
+            document.getElementById('verseText').textContent = verse.text;
+            document.getElementById('verseRef').textContent = verse.ref;
+            
+            const verseBox = document.getElementById('verseBox');
+            verseBox.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
